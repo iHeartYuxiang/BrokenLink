@@ -93,14 +93,14 @@ public class ExcelUtility {
 					cellA1 = row.createCell((short) 0);
 					cellA1.setCellValue("Bad Link URL");
 		
-					HSSFCell cellB1 = row.createCell((short) 1);
-					cellB1.setCellValue("Link Text or Image Source");
+					//HSSFCell cellB1 = row.createCell((short) 1);
+					//cellB1.setCellValue("Link Text or Image Source");
 					
-					HSSFCell cellC1 = row.createCell((short) 2);
+					HSSFCell cellC1 = row.createCell((short) 1);
 					cellC1.setCellValue("Status Code");
 					
 					cellA1.setCellStyle(cellStyle);
-					cellB1.setCellStyle(cellStyle);
+					//cellB1.setCellStyle(cellStyle);
 					cellC1.setCellStyle(cellStyle);
 				
 				}
@@ -116,10 +116,10 @@ public class ExcelUtility {
 					cellA1 = row.createCell((short) 0);
 					cellA1.setCellValue(brokenLinkList.get(i).getUrl());
 		
-					HSSFCell cellB1 = row.createCell((short) 1);
-					cellB1.setCellValue(brokenLinkList.get(i).getLinkText());
+				//	HSSFCell cellB1 = row.createCell((short) 1);
+				//	cellB1.setCellValue(brokenLinkList.get(i).getLinkText());
 					
-					HSSFCell cellC1 = row.createCell((short) 2);
+					HSSFCell cellC1 = row.createCell((short) 1);
 					cellC1.setCellValue(brokenLinkList.get(i).getStatusCode());
 					
 				}	

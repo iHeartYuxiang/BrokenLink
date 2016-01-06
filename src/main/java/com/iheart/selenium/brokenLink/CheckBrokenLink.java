@@ -128,19 +128,16 @@ public class CheckBrokenLink {
 						e.printStackTrace();
 						System.out.println("eXCEPTON IS THROWN FOR HREF/STATUS:" + href + "--------" + link.getText() );
 						
-						badLinks.add(new BadLink(linkText, href, -2)); //status code is not available
+						badLinks.add(new BadLink( href, -2)); //status code is not available
 					}
-					//System.out.println("HREF/STATUS:" + href + "/" + status );
-					if (statusCode != 200 && statusCode != 302 && statusCode != 301)
+					
+				//	if (statusCode != 200 && statusCode != 302 && statusCode != 301)
+					if (statusCode == 404 || statusCode ==500 )
 					{	
-					    if (linkText.equals(""))
-					    {	
-					    	linkText = link.getAttribute("src");
-						   
-					    }	
 						
-						System.out.println("HREF/STATUS:" + href + "-----" + linkText + "-------" +  statusCode );
-					     badLinks.add(new BadLink(linkText, href , statusCode));
+						System.out.println("HREF/STATUS:" + href  + "-------" +  statusCode );
+					   //  badLinks.add(new BadLink(linkText, href , statusCode));
+						badLinks.add(new BadLink(href , statusCode));
 					}
 				}		
 				
