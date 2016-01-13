@@ -41,8 +41,8 @@ public class TestLocalDesktop {
 		//Choose sites for checking.  Divide the whole sites by 5, and run the corresponding part
 		
 		
-		//List<String>  siteList_deskTop= ExcelUtility.readSiteList("siteList_desktop.txt");
-		List<String>  siteList_deskTop= ExcelUtility.readSiteList("test.txt");
+		List<String>  siteList_deskTop= ExcelUtility.readSiteList("siteList_desktop.txt");
+		//List<String>  siteList_deskTop= ExcelUtility.readSiteList("test.txt");
 		
 		List<String> siteToCheckToday = new ArrayList<String>();
 		siteToCheckToday.addAll(getTodaysChunk(siteList_deskTop));
