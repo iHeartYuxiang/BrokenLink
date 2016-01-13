@@ -115,7 +115,7 @@ public class CheckBrokenLink {
 				     !isSocial(href) && !isVoid(href)  && !isMobileNative(href) && !isJavaScriptAlert(href))
 				{	
 					
-					System.out.println("See link: " +  href );
+					//System.out.println("See link: " +  href );
 					try{
 						if (href.startsWith("https"))
 							//statusCode= getSSLResponseCode(href); 
@@ -198,7 +198,7 @@ public class CheckBrokenLink {
 		    HttpURLConnection huc = (HttpURLConnection) u.openConnection();  
 		    huc.setRequestMethod("GET");  
 		    huc.connect();  
-		    System.out.println("response:" + huc.getResponseCode());
+		  //  System.out.println("response:" + huc.getResponseCode());
 		    return huc.getResponseCode();  
 		}
 		
@@ -217,8 +217,8 @@ public class CheckBrokenLink {
 		 
 			HttpResponse response = client.execute(request);
 			int responseCode = response.getStatusLine().getStatusCode();
-		 
-			System.out.println("response:" +  responseCode );
+		   // if (responseCode == 404)
+			 //   System.out.println("bad url:" + href + "/" +  responseCode );
 			
 			return responseCode;
 		}

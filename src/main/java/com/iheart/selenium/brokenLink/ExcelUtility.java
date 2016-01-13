@@ -139,41 +139,6 @@ public class ExcelUtility {
 			}
 	    }
 
-
-	    public static void writeToExcel_bad(List<BadLink> brokenLinkList){
-
-	        // Using XSSF for xlsx format, for xls use HSSF
-	        Workbook workbook = new XSSFWorkbook();
-
-	        Sheet linkSheet = workbook.createSheet("BrokenLinks");
-
-	        int rowIndex = 0;
-	        for(BadLink link : brokenLinkList)
-	        {
-	            Row row = linkSheet.createRow(rowIndex++);
-	            int cellIndex = 0;
-	            //first place in row is url
-	            row.createCell(cellIndex++).setCellValue(link.getUrl());
-
-	            //second place in row is status code
-	           row.createCell(cellIndex++).setCellValue(link.getStatusCode());
-	        }//FOR()
-
-	        //write this workbook in excel file.
-	        try {
-	            FileOutputStream fos = new FileOutputStream(FILE_PATH);
-	            workbook.write(fos);
-	            fos.close();
-
-	            System.out.println(FILE_PATH + " is successfully written");
-	        } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-
-
-	    }
 	
 	
 }
