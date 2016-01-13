@@ -76,7 +76,7 @@ public class CheckBrokenLink {
 		}
 	   
 		
-		public void goThroughLinks() throws Exception
+		public void goThroughLinks(String category) throws Exception
 		{  
 			String href ="";
 	    	String linkText ="";//if it is an image, put image src here
@@ -161,7 +161,7 @@ public class CheckBrokenLink {
 	       // if (badLinks.size() > 0)
 	        
 	        if (cleanOne.size() > 0)
-	            ExcelUtility.writeToExcel(cleanOne);
+	            ExcelUtility.writeToExcel(cleanOne, category);
 		}
 		
 		

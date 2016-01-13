@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -56,13 +57,16 @@ public class ExcelUtility {
 	    	return result;
 	    }
 
-	    public static void writeToExcel( List<BadLink> brokenLinkList)
+	    public static void writeToExcel( List<BadLink> brokenLinkList, String category)
 	    {  
 	    	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
    			Date date = new Date();
    			//System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
-	       String fileName = "BadLinks_" +  dateFormat.format(date) + ".xls";
-	    	
+	       String fileName = category +  "/BadLinks_" +  dateFormat.format(date) + ".xls";
+	    	//Make directory if not exist yet
+	       File file = new File(fileName);
+	     //  file.mkdirs();
+	       file.getParentFile().mkdir();
 	    	try {
 	    	    
 				FileOutputStream fileOut = new FileOutputStream(fileName);
